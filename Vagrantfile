@@ -44,14 +44,14 @@ Vagrant.configure("2") do |config|
   # Example for VirtualBox:
   #
 
- config.vm.provider "virtualbox" do |vb|
+  config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]  
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
   #   vb.memory = "1024"
- end
+  end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
@@ -67,6 +67,7 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
+    sudo sed -i s/10.0.2.3/8.8.8.8/g /etc/resolv.conf
     sudo yum -y update
     sudo yum -y install tmux
     sudo yum -y install cmake
@@ -81,6 +82,7 @@ Vagrant.configure("2") do |config|
     sudo yum -y install postgresql postgresql-server postgresql-contrib
     sudo yum -y install bind-utils
     cp /vagrant/.bashrc /home/vagrant/.bashrc
+    
   SHELL
   config.vm.provision "shell", path: "java.sh"
   config.vm.provision "shell", path: "mvn.sh"
@@ -89,4 +91,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "keys.sh", privileged: false
   config.vm.provision "shell", path: "vim.sh", privileged: false
   config.vm.provision "shell", path: "postgres.sh"
+
 end
