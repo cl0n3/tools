@@ -81,6 +81,8 @@ Vagrant.configure("2") do |config|
     sudo yum -y install unzip
     sudo yum -y install postgresql postgresql-server postgresql-contrib
     sudo yum -y install bind-utils
+    sudo yum -y install epel-release
+    sudo yum -y install python-pip
     cp /vagrant/.bashrc /home/vagrant/.bashrc
     
   SHELL
