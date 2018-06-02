@@ -44,14 +44,14 @@ Vagrant.configure("2") do |config|
   # Example for VirtualBox:
   #
 
-  config.vm.provider "virtualbox" do |vb|
+ config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]  
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
   #   vb.memory = "1024"
-  end
+ end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
@@ -88,5 +88,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "cmake.sh"
   config.vm.provision "shell", path: "keys.sh", privileged: false
   config.vm.provision "shell", path: "vim.sh", privileged: false
-
+  config.vm.provision "shell", path: "postgres.sh"
 end
