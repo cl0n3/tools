@@ -79,11 +79,13 @@ Vagrant.configure("2") do |config|
     sudo yum -y install vim
     sudo yum -y install ctags
     sudo yum -y install unzip
+    sudo yum -y install nodejs
     sudo yum -y install postgresql postgresql-server postgresql-contrib
     sudo yum -y install bind-utils
     sudo yum -y install epel-release
     sudo yum -y install python-pip
-    cp /vagrant/.bashrc /home/vagrant/.bashrc
+    cp /vagrant/bashrc /home/vagrant/.bashrc
+    cp /vagrant/vimrc /home/vagrant/.vimrc
     
   SHELL
   config.vm.provision "shell", path: "java.sh"
