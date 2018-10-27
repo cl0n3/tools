@@ -69,6 +69,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     sudo sed -i s/10.0.2.3/8.8.8.8/g /etc/resolv.conf
     sudo yum -y update
+	sudo yum -y install yum-utils
     sudo yum -y install tmux
     sudo yum -y install cmake
     sudo yum -y install gcc
@@ -84,6 +85,12 @@ Vagrant.configure("2") do |config|
     sudo yum -y install bind-utils
     sudo yum -y install epel-release
     sudo yum -y install python-pip
+	sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+	sudo yum -y install python3.6u
+	sudo yum -y install python3.6u-pip
+	curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
+	sudo yum -y install nodejs
+	npm install -g @angular/cli
     cp /vagrant/bashrc /home/vagrant/.bashrc
     cp /vagrant/vimrc /home/vagrant/.vimrc
     
