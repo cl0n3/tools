@@ -43,9 +43,9 @@ Vagrant.configure("2") do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]  
+
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
   #
@@ -80,7 +80,6 @@ Vagrant.configure("2") do |config|
     sudo yum -y install vim
     sudo yum -y install ctags
     sudo yum -y install unzip
-    sudo yum -y install nodejs
     sudo yum -y install postgresql postgresql-server postgresql-contrib
     sudo yum -y install bind-utils
     sudo yum -y install epel-release
