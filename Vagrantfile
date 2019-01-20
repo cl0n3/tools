@@ -85,6 +85,7 @@ Vagrant.configure("2") do |config|
     
   SHELL
   config.vm.provision "shell", path: "java.sh"
+  config.vm.provision "shell", path: "node.sh"
   config.vm.provision "shell", path: "mvn.sh"
   config.vm.provision "shell", path: "protoc.sh"
   config.vm.provision "shell", path: "cmake.sh"
