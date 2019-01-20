@@ -34,5 +34,7 @@ CREATE DATABASE $APP_DB_NAME WITH OWNER=$APP_DB_USER
                                   TEMPLATE=template0;
 EOF
 
+sudo systemctl enable postgresql
+
 echo "Successfully created PostgreSQL dev virtual machine."
 echo ""
