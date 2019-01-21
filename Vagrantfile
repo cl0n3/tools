@@ -85,8 +85,7 @@ Vagrant.configure("2") do |config|
     sudo yum -y install epel-release
     sudo yum -y install python-pip
 	sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm
-	sudo yum -y install python3.6u
-	sudo yum -y install python3.6u-pip
+	sudo yum -y install python36u python36u-libs python36u-devel python36u-pip
 	curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
 	sudo yum -y install nodejs
 	npm install -g @angular/cli
